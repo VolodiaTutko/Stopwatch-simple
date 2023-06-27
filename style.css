@@ -7,51 +7,37 @@
 }
 
 body{
-    background: rgba(10, 1, 1, 0.918);
+    background: rgba(10, 1, 1, 0.979);
+	
 }
 
 .container {
-    /* margin-bottom: 150px; */
-    background-color: rgb(255, 255, 255);
-    width: calc(50% + 10px);
-    min-width: calc(500px + 10px);
+     margin-bottom: 150px; 
+      background-color: rgb(0, 0, 0); 
+     width: 69%; 
+     height: 50%;   
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 320px;
-    left: 60%;
-    padding: 30px 0;
-    padding-bottom: 30px;
-    border-radius: 10px;
+    transform: translate(42%, 10%);
+    border-radius: 13px;
+    padding-bottom: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.338);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 25px;
+    
+    
+    
+    
+    
+   
     
    
 }
 
-/* .time-display{
-    position: relative; 
-    width: 92%;
-    background:rgb(255, 255, 255);
-    left: 4%;
-    font-family: 'Roboto mono' monospace;
-    color: dimgrey;
-    font-size: 35px;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(65, 5 , 145, 0.25);
-    margin-top: 20px;
-
-} */
 
 .buttons{
     width:90%;
-    margin: 35px auto 0 auto;
+    margin: 400px auto 0 auto;
     display: flex;
     justify-content: space-around;
 
@@ -87,19 +73,7 @@ body{
     box-shadow: 0 0 20px rgba( 0, 0, 0, 0.25);
 }
 
-.stopwatch-image {
-    margin-top: 50px;
-    width: 600px;
-    height: 300px;
-    left: calc(50px + 10px);
-   
-}
 
-.stopwatch-image img {
-    width: 500px;
-    height: auto;
-   
-}
     
 
 
@@ -109,14 +83,15 @@ body{
     left: 50%;
     transform: translate(-50%, -53%);
     font-family: 'Roboto mono', monospace;
-    font-size: 38px;
-    color: dimgrey;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 56px;
+    color: #ffffff;
+    text-shadow: 0 0 5px #22dddd, 0 0 10px #24e7ee, 0 0 20px #21c0e7, 0 0 40px #3bc9d3, 0 0 80px #00eeff, 0 0 90px #00eeff, 0 0 100px #00eeff, 0 0 150px #00eeff;
+
     padding: 20px;
 }
 
 h1{
-    font-size: 48px;
+    font-size: 43px;
     font-weight: 800;
     letter-spacing: 8px;
     text-transform: uppercase;
@@ -126,8 +101,8 @@ h1{
     -webkit-text-stroke-color: white ;
     text-align: left;
     position: relative;
-    top: 220px;
-    left: 50px;
+    top: 180px;
+    left: 30px;
 
 }
 
@@ -141,7 +116,7 @@ h1::after{
 }
 
 
-h1:hover::before
+/* h1:hover::before
 {
     color: rgb(255, 230, 0);
     transform: translate(12px,-12px);
@@ -154,27 +129,13 @@ h1:hover::after{
     transform: translate(24px, -24px);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(255, 255, 255);
-}
+} */
 :root {
 	--transition: 0.25s;
 	--spark: 1.8s;
 	--hue: 245;
 }
 
-body {
-	/* --active: 0;
-	background: hsl(
-		var(--hue)
-		calc(var(--active) * 97%)
-		6%
-	);
-	display: grid;
-	place-items: center;
-	min-height: 100vh;
-	font-family: system-ui, sans-serif;
-	transition: background var(--transition);
-	overflow: hidden; */
-}
 
 button {
 	--cut: 0.1em;
@@ -218,209 +179,11 @@ button:active {
   scale: 1;
 }
 
-.star {
-	height: calc(var(--size) * 1px);
-	aspect-ratio: 1;
-	background: white;
-	border-radius: 50%;
-/*	filter: blur(4px);*/
-	position: absolute;
-	opacity: var(--alpha);
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(10deg) rotate(0deg) translateY(calc(var(--distance) * 1px)) ;
-	animation: orbit calc(var(--duration) * 1s) calc(var(--delay) * -1s) infinite linear;
-}
-
-@keyframes orbit {
-	to {
-		transform: translate(-50%, -50%) rotate(10deg) rotate(360deg) translateY(calc(var(--distance) * 1px));
-	}
-}
-
-.galaxy {
-	position: absolute;
-	width: 100%;
-	aspect-ratio: 1;
-	top: 50%;
-	left: 50%;
-	translate: -50% -50%;
-	overflow: hidden;
-	opacity: var(--active);
-	transition: opacity var(--transition);
-	/*transform-style: preserve-3d;
-	perspective: 100vmin;*/
-/*	opacity: 0.25;*/
-}
-
-.galaxy__ring {
-	height: 200%;
-	width: 200%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	border-radius: 50%;
-	transform: translate(-28%, -40%) rotateX(-24deg) rotateY(-30deg) rotateX(90deg);
-	transform-style: preserve-3d;
-/*	background: red;*/
-}
-
-.galaxy__container {
-	position: absolute;
-	inset: 0;
-	opacity: var(--active);
-	transition: opacity var(--transition);
-  mask: radial-gradient(white, transparent);
-}
-
-.star--static {
-	animation: none;
-	top: 50%;
-	left: 50%;
-	transform: translate(0, 0);
-	max-height: 4px;
-	filter: brightness(4);
-	opacity: 0.9;
-	animation:
-		move-x calc(var(--duration) * 0.1s) calc(var(--delay) * -0.1s) infinite linear,
-		move-y calc(var(--duration) * 0.2s) calc(var(--delay) * -0.2s) infinite linear;
-}
-
-button:hover .star--static {
-	animation-play-state: paused;
-}
-
-@keyframes move-x {
-	0% {
-		translate: -100px 0;
-	}
-	100% {
-		translate: 100px 0;
-	}
-}
-
-@keyframes move-y {
-	0% {
-		transform: translate(0, -50px);
-	}
-	100% {
-		transform: translate(0, 50px);
-	}
-}
-
-.spark {
-	position: absolute;
-	inset: 0;
-	border-radius: 2rem;
-	rotate: 0deg;
-	overflow: hidden;
-	mask: linear-gradient(white, transparent 50%);
-	animation: flip calc(var(--spark) * 2) infinite steps(2, end);
-}
-
-@keyframes flip {
-	to {
-		rotate: 360deg;
-	}
-}
-
-.spark:before {
-	content: "";
-	position: absolute;
-	width: 200%;
-	aspect-ratio: 1;
-	top: 0%;
-	left: 50%;
-	z-index: -1;
-	translate: -50% -15%;
-	rotate: 0;
-	transform: rotate(-90deg);
-	opacity: calc((var(--active)) + 0.4);
-	background: conic-gradient(
-		from 0deg,
-		transparent 0 340deg,
-		white 360deg
-	);
-	transition: opacity var(--transition);
-	animation: rotate var(--spark) linear infinite both;
-}
-
-.spark:after {
-	content: "";
-	position: absolute;
-	inset: var(--cut);
-	border-radius: 2rem;
-}
-
-.backdrop {
-	position: absolute;
-	inset: var(--cut);
-	background: var(--bg);
-	border-radius: 2rem;
-	transition: background var(--transition);
-}
-
-@keyframes rotate {
-	to {
-		transform: rotate(90deg);
-	}
-}
-
-
-
-@supports(selector(:has(:is(+ *)))) {
-	body:has(button:is(:hover, :focus-visible)) {
-		--active: 1;
-		--play-state: running;
-	}
-	.bodydrop {
-		display: none;
-	}
-}
-
-button:is(:hover, :focus-visible) ~ :is(.bodydrop, .particle-pen) {
-	--active: 1;
-	--play-state: running;
-}
-
-.bodydrop {
-	background: hsl(
-		260
-		calc(var(--active) * 97%)
-		6%
-	);
-	position: fixed;
-	inset: 0;
-	z-index: -1
-}
-
-
-
 button:is(:hover, :focus-visible) {
 	--active: 1;
 	--play-state: running;
 }
 
 
-.galaxy-button {
-	position: relative;
-}
 
-@keyframes float-out {
-	to {
-		rotate: 360deg;
-	}
-}
 
-.text {
-	translate: 2% -6%;
-	letter-spacing: 0.01ch;
-	/*background: linear-gradient(90deg, hsl(0 0% calc((var(--active) * 100%) + 65%)), hsl(0 0% calc((var(--active) * 100%) + 26%)));
-	-webkit-background-clip: text;*/
-	color: hsl(0 0% calc(60% + (var(--active) * 26%)));
-}
-
-button svg {
-	inline-size: 1.25em;
-	translate: -25% -5%;
-}

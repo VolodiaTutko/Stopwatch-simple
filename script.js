@@ -54,6 +54,8 @@ function displayTimer() {
 
     timeRef.innerHTML = `${h} : ${m} : ${s}`;
 }
+
+
 //---------------------------------
 let Name = "oleksandr";
 console.log(Name);
@@ -71,3 +73,110 @@ console.log(typeof Name)
 // (condition) ? (true) : (false);
 // if (10<12) ? console.log('true') : console.log('false')
 // variable = (10<12) ? console.log('true') : console.log('false')
+
+
+console.log((function recursive(a,v, d){ return Math.pow(a*d,v);})(2,5,2))
+
+
+let mod = (a,b) => a%b;
+console.log(mod(9,4));
+console.log(mod(11111,9));
+console.log(mod(45,14))
+let mass = [];
+mass.unshift(1,2,3);
+console.log(mass);
+mass.shift();
+console.log(mass);
+mass.copyWithin(1,0)
+mass.copyWithin();
+console.log(mass);
+
+// function createPhoneNumber(numbers){
+//     return `(${numbers.slice(0,3).})  ${numbers.slice(3,6)} - ${numbers.slice(6,10)}`;
+  
+// };
+// numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+// console.log(createPhoneNumber(numbers));
+cc = { a: '3', b: '4', c: '5'};
+
+function f(x, cc) { 
+    if(x==cc['a'])
+      {
+      return cc['b'];
+      }  
+      else if(x == cc['b'])
+      {
+        return cc['c']
+      } 
+      else if(x == cc['c'])
+      {
+        return cc['a']
+      }   
+
+  }
+console.log(cc.b)
+// function f(x, cc) {
+//   switch (x) {
+//     case cc['a']:
+//       return cc['b'];
+//     case cc['b']:
+//       return cc['c'];
+//     case cc['c']:
+//       return cc['a'];
+//     default:
+//       return null; 
+//   }
+// }
+
+// function calculateSum(array) {
+//   let sum = 0;
+
+//   for (let i = 0; i < array.length; i++) {
+//     sum += array[i];
+//   }
+
+//   return sum;
+// }
+// function sumMul(n,m){
+//     if(n>0 && m >0)
+//     { 
+//         let subsum = n;
+//    let arr_subsum = [];
+//    do 
+//   {
+//     console.log(arr_subsum);
+//     arr_subsum.push(subsum);
+//     subsum +=n;
+//   }while(subsum <= m-1)
+//   return calculateSum(arr_subsum);}
+//   else
+//   {
+//     return "INVALID";
+//   }
+  
+// }
+
+// console.log(sumMul(14,2114));
+// function sumMul(n,m){
+//   if (n >= m) return "INVALID";
+
+// var sum = 0;
+//   for (var i = n; i < m; i+=n) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+function alphabetPosition(text) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let text_arr = text.toLowerCase().replaceAll(' ', '').replaceAll('.','').replaceAll('\'','').split('');
+  let indexes = [];
+  
+  for (let i = text_arr.length - 1; i >= 0; i--) {
+  if (!alphabet.includes(text_arr[i])) {
+    text_arr.splice(i, 1);
+  }
+}
+  text_arr.forEach(index => indexes.push(alphabet.indexOf(index)+1));
+  return indexes.toString().replaceAll(',',' ');
+}
+console.log(alphabetPosition("The sunset sets at twelve o' clock."))
